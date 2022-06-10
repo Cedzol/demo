@@ -41,7 +41,6 @@ export default function Fruit() {
         image: HTMLInputElement
         price: HTMLInputElement
         weight?: HTMLInputElement
-
     }
 
     interface YourFormElement extends HTMLFormElement {
@@ -63,6 +62,7 @@ export default function Fruit() {
             weight: newWeight
         }
         setFruitData((fruitData) => [...fruitData, newFruit])
+        setFilteredFruits(fruitData)
     }
 
     let [filteredFruits, setFilteredFruits] = useState(fruits)
@@ -136,6 +136,7 @@ export default function Fruit() {
                         <tr>
                             <td>
                                 <button type="submit" id={"submitButton"} className={"send"}>Send It!</button>
+
                             </td>
                         </tr>
                     </table>
